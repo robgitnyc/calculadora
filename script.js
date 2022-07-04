@@ -160,7 +160,9 @@ function powerPlusPlus() {
 };
 
 plus.addEventListener("click", () => {
-  
+    if (num1 ==="" && tempNum ==="") {
+        return;
+    }
     
     if (result !== "") {
         operator = "+";
@@ -184,7 +186,9 @@ plus.addEventListener("click", () => {
 });
 
 minus.addEventListener("click", () => {
-
+    if (num1 ==="" && tempNum ==="") {
+        return;
+    }
     if (result !== "") {
         operator = "-";
         num1 = result;
@@ -207,7 +211,9 @@ minus.addEventListener("click", () => {
 
 
 multiply.addEventListener("click", () => {
-    
+    if (num1 ==="" && tempNum ==="") {
+        return;
+    }
     if (result !== "") {
         operator = "*";
         num1 = result;
@@ -231,6 +237,9 @@ multiply.addEventListener("click", () => {
 });
 
 divide.addEventListener("click", () => {
+    if (num1 ==="" && tempNum ==="") {
+        return;
+    }
     if (result !== "") {
         operator = "/";
         num1 = result;
@@ -259,11 +268,14 @@ equals.addEventListener("click", () => {
     return;
   } else {
     num2 = tempNum;
+    if (num1 ==="") {
+        return;
+    } else {
     result = calculate();
     display.textContent = result;
     operator = "";
     tempNum = "";
-   
+    }
   }
 });
 
@@ -298,4 +310,3 @@ function calculate() {
 
 };
 
-console.log(6/0);
