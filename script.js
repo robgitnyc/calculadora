@@ -207,6 +207,7 @@ minus.addEventListener("click", () => {
 
 
 multiply.addEventListener("click", () => {
+    
     if (result !== "") {
         operator = "*";
         num1 = result;
@@ -217,12 +218,15 @@ multiply.addEventListener("click", () => {
         tempNum = "";
     } else {
         num2 = tempNum;
+        if (num2 === "") {
+            return;
+        } else {
         result = calculate()
         display.textContent = result;
         num1 = result;
         tempNum = "";
         operator = "*";
-
+        }
     }
 });
 
@@ -237,12 +241,15 @@ divide.addEventListener("click", () => {
         tempNum = "";
     } else {
         num2 = tempNum;
+        if (num2 === "") {
+            return;
+        } else {
         result = calculate()
         display.textContent = result;
         num1 = result;
         tempNum = "";
         operator = "/";
-
+        }
     }
    
 });
@@ -280,6 +287,7 @@ function calculate() {
         return  +num1 - +num2;
     } else if (operator === "*") {
         return  +num1 * +num2;
+        
     } else if (operator === "/") {
         return  +num1 / +num2;
     } else if (operator === "++") {
@@ -289,3 +297,5 @@ function calculate() {
    
 
 };
+
+console.log(6/0);
